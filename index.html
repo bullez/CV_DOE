@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Булат Хайрльварин. Design Operations Engineer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap">
+<style>
+:root{--bd:#c9ccd1;--paper:#fdfdfc;--k:#1b1d21;--mut:#5b5f66;--ln:#d9dbdf;--c:#00a3d9;--m:#d4006f;--y:#f5d000;--lk:#b8005f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bd:#0c0d0f;--paper:#1a1c20;--k:#ecece8;--mut:#9fa3ab;--ln:#2c2f35;--c:#35c2f0;--m:#ff4fa8;--y:#ffd91a;--lk:#ff6db8}}
+:root[data-theme="dark"]{--bd:#0c0d0f;--paper:#1a1c20;--k:#ecece8;--mut:#9fa3ab;--ln:#2c2f35;--c:#35c2f0;--m:#ff4fa8;--y:#ffd91a;--lk:#ff6db8}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bd);color:var(--k);font:17px/1.6 Onest,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:44px;position:relative;
+background:
+linear-gradient(var(--k),var(--k)) 0 44px/28px 1px no-repeat,linear-gradient(var(--k),var(--k)) 44px 0/1px 28px no-repeat,
+linear-gradient(var(--k),var(--k)) right 0 top 44px/28px 1px no-repeat,linear-gradient(var(--k),var(--k)) right 44px top 0/1px 28px no-repeat,
+linear-gradient(var(--k),var(--k)) 0 bottom 44px/28px 1px no-repeat,linear-gradient(var(--k),var(--k)) 44px bottom 0/1px 28px no-repeat,
+linear-gradient(var(--k),var(--k)) right 0 bottom 44px/28px 1px no-repeat,linear-gradient(var(--k),var(--k)) right 44px bottom 0/1px 28px no-repeat}
+.sheet{background:var(--paper);padding:56px 56px 40px}
+a{color:var(--lk);text-underline-offset:3px}
+.top{display:flex;gap:28px;align-items:flex-end;flex-wrap:wrap;justify-content:space-between}
+.ph{position:relative;width:118px;height:148px;background:var(--ln);display:grid;place-items:center;flex:none}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph span{font:700 44px Unbounded,sans-serif;color:var(--mut)}
+.ph.no img{display:none}
+.bars{display:flex;height:14px;width:176px;flex:none}.bars i{flex:1}
+h1{font:700 clamp(30px,6.2vw,60px)/1.05 Unbounded,system-ui,sans-serif;letter-spacing:-.02em;margin:36px 0 12px}
+.role{font:500 clamp(17px,2.4vw,22px)/1.3 Unbounded,sans-serif;margin:0 0 18px;color:var(--m)}
+.lead{max-width:600px;font-size:19px;margin:0}
+.cut{margin:36px 0 0}
+.cut svg{width:100%;height:auto;display:block;overflow:visible}
+.cut p{margin:8px 0 0;color:var(--mut);font-size:15px}
+.cut button{font:600 15px Onest,sans-serif;background:var(--k);color:var(--paper);border:0;padding:9px 16px;margin-top:10px;cursor:pointer}
+h2{font:700 22px/1.2 Unbounded,sans-serif;margin:0 0 20px}
+section{border-top:2px dashed var(--m);margin-top:56px;padding-top:30px}
+.row{display:grid;grid-template-columns:240px 1fr;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--ln)}
+.row:last-child{border-bottom:0}
+.row h3{font:600 17px/1.35 Onest,sans-serif;margin:0}
+.row p{margin:0 0 8px}.row p:last-child{margin:0}
+.row small{color:var(--mut);font-size:14px;display:block}
+.num{display:grid;grid-template-columns:240px 1fr;gap:6px 32px;padding:14px 0;border-bottom:1px solid var(--ln);align-items:baseline}
+.num b{font:500 clamp(20px,3vw,28px) Unbounded,sans-serif}
+.num s{color:var(--mut);text-decoration-color:var(--m);text-decoration-thickness:2px;margin-right:8px;font:500 clamp(16px,2.4vw,22px) Unbounded,sans-serif}
+.num span{font-size:16px}
+.tools{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0 0 22px;padding:0;list-style:none}
+.tools li{display:flex;align-items:center;gap:8px}.tools li:before{content:"";width:10px;height:10px;background:var(--c)}
+.tools li:nth-child(4n+2):before{background:var(--m)}.tools li:nth-child(4n+3):before{background:var(--y)}.tools li:nth-child(4n):before{background:var(--k)}
+.tools-h{font:600 17px Onest,sans-serif;margin:0 0 10px}
+footer{margin-top:56px;padding-top:20px;border-top:2px dashed var(--m);font-size:15px;color:var(--mut)}
+.th{position:fixed;right:max(12px,env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));background:var(--paper);color:var(--k);border:1px solid var(--k);padding:5px 12px;font:500 13px Onest,sans-serif;cursor:pointer;z-index:5}
+@media(max-width:700px){.wrap{padding:22px 10px}.sheet{padding:28px 20px}.row,.num{grid-template-columns:1fr}.top{align-items:flex-start}
+.wrap{background:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<button class="th" id="th" type="button">тема</button>
+<div class="wrap"><div class="sheet">
+
+<div class="top">
+<div class="ph" id="ph"><img src="photo.png" alt="Булат Хайрльварин" onerror="document.getElementById('ph').classList.add('no')"><span>Б</span></div>
+<div class="bars" aria-hidden="true"><i style="background:var(--c)"></i><i style="background:var(--m)"></i><i style="background:var(--y)"></i><i style="background:var(--k)"></i></div>
+</div>
+
+<h1>Булат<br>Хайрльварин</h1>
+<p class="role">Design Operations Engineer</p>
+<p class="lead">Десять лет в дизайне, и по дороге код стал частью работы. Нахожу в работе дизайнеров и производства то, что можно отдать скрипту, и отдаю.</p>
+
+<div class="cut">
+<svg id="sv" viewBox="0 0 880 110" aria-label="Пунктир превращается в отдельные контуры"></svg>
+<button id="go" type="button">Запустить скрипт</button>
+<p id="cap"></p>
+</div>
+
+<section>
+<h2>Что изменилось на работе</h2>
+<div class="num"><span>Макет к производству</span><div><s>30–40 мин</s><b>10 мин</b></div></div>
+<div class="num"><span>Стоимость и сроки заказа для менеджера</span><div><s>2 часа</s><b>5 мин</b></div></div>
+<div class="num"><span>Скрипт для плоттерной резки</span><div><b>до 100 путей</b> <span>за один запуск</span></div></div>
+</section>
+
+<section>
+<h2>Инструменты, которые я написал</h2>
+<div class="row"><h3>Скрипты для Illustrator<small>Добрый Картон</small></h3><div><p>Пунктир превращается в отдельные контуры, и каждый штрих остаётся точной кривой. Ближайшие концы контуров соединяются сами, с настраиваемым допуском. Площадь выделенного считается в дюймах, сантиметрах и метрах, так менеджер сразу видит расход материала.</p></div></div>
+<div class="row"><h3>Калькулятор скорости смены заказа<small>HTML, JS</small></h3><div><p>Считает производительность линии по длине и ширине изделия и сам находит узкое место. Менеджер называет клиенту реальные сроки.</p></div></div>
+<div class="row"><h3>Конфигуратор техкарты гофроящика<small>HTML, JS, 3D</small></h3><div><p>Типы А1 и В1 по ГОСТ 9142-2014. Считает заготовку, площадь и панели развёртки, строит 3D-модель с направлением гофры, проверяет допуски станков и укладку в пачки и на паллеты.</p><p><a href="https://bullez.github.io/designer/">Демо на сайте дизайнера</a></p></div></div>
+</section>
+
+<section>
+<h2>Своё, для людей</h2>
+<div class="row"><h3><a href="https://github.com/bullez/Whoosh-Off-to-Print-">Whoosh, Off to Print!</a></h3><div><p>Плагин для Figma, который готовит макет к типографии. Сам считает вылеты и безопасную зону, отдаёт PDF в CMYK, чистый SVG для Illustrator и CorelDRAW и картинки с честными 300 dpi. Работает без интернета.</p><p>У платных плагинов число экспортов ограничено, а макетов у меня много. Сделал свой, бесплатный.</p></div></div>
+<div class="row"><h3><a href="https://github.com/bullez/cdr-bridge">cdr-bridge</a></h3><div><p>Файл из новой версии CorelDRAW не открывается в старой. Программа меняет версию .cdr за пару кликов, слои и текст остаются на месте. Ещё умеет превращать файлы в SVG, PDF, AI и PNG, чтобы открыть их в Illustrator.</p><p>Сделал для коллег и себя, раздаю бесплатно.</p></div></div>
+<div class="row"><h3><a href="https://github.com/bullez/meteomap">meteomap</a></h3><div><p>Страничка для друзей из разных городов: погода сейчас и на пять дней, местное время каждого и карта с радаром осадков. Одним взглядом видно, что за окном у всех.</p><p>Для настроения там есть шуточный счётчик цены килограмма бананов.</p></div></div>
+<div class="row"><h3><a href="https://github.com/bullez/tochka.kontakta">Точка контакта</a></h3><div><p>Браузерная игра про поиск работы с двух сторон стола. Выбираешь соискателя или нанимателя, проходишь шесть этапов, а финал бывает трёх видов: оффер, компромисс или честное «нет».</p><p>Внутри мини-игры, достижения и экран статистики. Сделал ради интереса, это один файл без зависимостей.</p></div></div>
+<div class="row"><h3><a href="https://github.com/bullez/ufa_afisha">Афиша</a></h3><div><p>Афиша событий, которую собирает скрипт на Python по списку источников и набору правил. Нужна жене и её подругам, чтобы быстрее выбрать, куда сходить.</p><p>В репозитории больше сотни правок, проект живой и растёт.</p></div></div>
+</section>
+
+<section>
+<h2>С чего начинал: дизайн</h2>
+<div class="row"><h3>Студия «Банан»<small>старший дизайнер, руководитель отдела</small></h3><div><p>Шесть лет делал фирменные стили, логотипы и брендбуки для финтеха, ритейла, ТВ, радио и торговых центров. Вёл проекты от идеи до печати и следил за качеством макетов и сроками.</p><p>Победа в народном голосовании конкурса фирстиля к 450-летию города: <a href="https://www.behance.net/gallery/155766071/450-let-ufe-(firmennyj-stil-logotip)">кейс на Behance</a>. Ребрендинг торгового центра на 45 000 кв.м, от логотипа до вывески на крыше: <a href="https://www.behance.net/gallery/207108023/tc-(brendbuk-logotip-dom-pro-dom)">брендбук на Behance</a>.</p><p>Именно там я начал отдавать рутину ИИ и ботам. Концепты стали делаться на 70% быстрее, а Telegram-бот забрал мелкие задачи у дизайнеров.</p></div></div>
+<div class="row"><h3>Айдентика Пушкинского рынка<small>2024</small></h3><div><p>Реконструированному рынку нужен был стиль уровня лучших столичных пространств, но с опорой на местную историю. Знак собран из двух колёс, это торговые пути прошлого. Булыжная мостовая, след тех самых колёс, стала основой системы: плотный чёрный знак, матовый «Муар» (Pantone 426 C), спокойный паттерн вместо глянца.</p><p>Знак построен по модульной сетке, поэтому одинаково работает на вывеске и на кружке. Колесо с продуктами стало навигацией: товарные группы рынка и четыре цвета для времён года. <a href="https://www.behance.net/gallery/234255781/brendbuk-dlja-gastroproekta">Брендбук на Behance</a>.</p></div></div>
+<div class="row"><h3>Нефтяная кухня<small>образовательный проект</small></h3><div><p>Фирстиль и дизайн-система образовательного стартапа в партнёрстве с Роснефтью, Татнефтью, СИБУРом и Башнефтью. Ещё ребрендинг спортивного медиа и афиши для хоккейных и футбольного клубов.</p></div></div>
+</section>
+
+<section>
+<h2>Путь</h2>
+<div class="row"><h3>2026</h3><div><b>Добрый Картон</b><br>дизайн-конструктор упаковки, автоматизация препресса</div></div>
+<div class="row"><h3>2025</h3><div><b>Частная практика</b><br>Python, Telegram-боты, вёрстка</div></div>
+<div class="row"><h3>2019–2025</h3><div><b>Студия «Банан»</b><br>старший дизайнер, руководитель дизайн-отдела</div></div>
+<div class="row"><h3>2018–2019</h3><div><b>СКАДтех</b><br>инженер-программист АСУ, SCADA</div></div>
+<div class="row"><h3>2019</h3><div><b>УГНТУ, магистр</b><br>автоматизация производственных процессов, информатика и вычислительная техника</div></div>
+</section>
+
+<section>
+<h2>Чем работаю</h2>
+<p class="tools-h">Код и ИИ</p>
+<ul class="tools"><li>Python</li><li>JavaScript</li><li>C#</li><li>HTML/CSS</li><li>Illustrator JSX</li><li>1С</li><li>Bitrix24</li><li>Qwen</li><li>DeepSeek</li><li>ChatGPT</li><li>Claude</li><li>Grok</li><li>Gemini</li></ul>
+<p class="tools-h">Дизайн</p>
+<ul class="tools"><li>Illustrator</li><li>Photoshop</li><li>InDesign</li><li>CorelDRAW</li><li>Figma</li><li>Blender</li><li>SketchUp</li><li>Tilda</li><li>Pantone</li><li>Prepress</li><li>Midjourney</li><li>Nano Banana</li><li>Freepik AI</li><li>Kling</li></ul>
+</section>
+
+<footer><a href="mailto:bullez@mail.ru">bullez@mail.ru</a> · <a href="https://t.me/design_n_code">Telegram «Дизайн и Код»</a> · <a href="https://github.com/bullez">GitHub</a> · <a href="https://www.behance.net/byllez721e">Behance</a> · <a href="https://bullez.github.io/designer/">Резюме дизайнера</a> · <a href="https://bullez.github.io/software_engineer/">Резюме инженера-программиста</a></footer>
+</div></div>
+<script>
+(function(){
+var NS="http://www.w3.org/2000/svg",sv=document.getElementById("sv"),cap=document.getElementById("cap"),go=document.getElementById("go"),cut=false,pts=[];
+for(var i=0;i<=130;i++)pts.push([8+i*6.7,55+Math.sin(i/8)*38]);
+function P(a){return a.map(function(p){return p[0].toFixed(1)+","+p[1].toFixed(1)}).join(" ")}
+function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);sv.appendChild(e);return e}
+var col=["var(--c)","var(--m)","var(--y)","var(--k)"];
+function before(){sv.innerHTML="";el("polyline",{points:P(pts),fill:"none",stroke:"var(--k)","stroke-width":3,"stroke-dasharray":"14 9"});cut=false;go.textContent="Запустить скрипт";cap.textContent="Было: один путь с пунктиром. Вручную его разбивают на контуры для резки, это 15–20 минут."}
+function after(){sv.innerHTML="";var n=0;for(var i=0;i+4<pts.length;i+=6){var p=el("polyline",{points:P(pts.slice(i,i+5)),fill:"none",stroke:col[n%4],"stroke-width":6,"stroke-linecap":"round",opacity:0});p.style.transition="opacity .2s "+(n*0.045)+"s";(function(q){requestAnimationFrame(function(){requestAnimationFrame(function(){q.setAttribute("opacity",1)})})})(p);n++}
+cut=true;go.textContent="Вернуть пунктир";cap.textContent="Стало: "+n+" отдельных контуров, каждый можно резать. Один клик."}
+go.onclick=function(){cut?before():after()};
+before();
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setTimeout(after,1000);
+document.getElementById("th").onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+})();
+</script>
+</body>
+</html>
